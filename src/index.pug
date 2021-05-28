@@ -1,0 +1,40 @@
+-var pageTitle = 't-task'
+
+doctype html
+html(lang="ru")
+  head 
+    title= pageTitle
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='css/style.css')
+    style 
+      include pug/mixins/mixins_cat.pug
+  body
+    .wrapper 
+      include pug/modules/header
+      .main-content 
+        .content
+          .filter
+            .filter-content 
+              h3.filter__title Сортировать по:
+              .filter-price Цене
+              .filter-age Возрасту
+          ul.cats__list   
+            li(data-price = '30000' data-age = '2').cats__item
+              +cat('img/cats/cats_1.png', 'img/like.svg', 'sale', '40%', 'Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '30 000 руб.', 'product__button-active', 'Купить')
+            li(data-price = '40000' data-age = '2').cats__item
+              +cat('img/cats/cats_2.png', 'img/like.svg', '', '', 'Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '40 000 руб.', '', 'Продан')
+            li(data-price = '20000' data-age = '2').cats__item
+              +cat('img/cats/cats_3.png', 'img/like.svg',  '', '', 'Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '20 000 руб.', 'product__button-active', 'Купить')
+            li(data-price = '25000' data-age = '2').cats__item
+              +cat('img/cats/cats_1.png', 'img/like.svg', '', '',' Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '25 000 руб.', 'product__button-active', 'Купить')
+            li(data-price = '30000' data-age = '2').cats__item
+              +cat('img/cats/cats_3.png', 'img/like.svg', 'sale', '40%', 'Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '30 000 руб.', 'product__button-active', 'Купить')
+            li(data-price = '10000' data-age = '2').cats__item
+              +cat('img/cats/cats_2.png', 'img/like.svg', '', '', 'Кот полосатый', 'Коричневый окрас', '2 мес.', '4', '10 000 руб.', '', 'Продан')
+          .next
+            button.next_button Показать еще 20
+        #scroll-top 
+          img(src="../../img/arrow-white.svg", alt="top")
+      include pug/modules/footer
+  block script
+      script(src='./js/script.js')

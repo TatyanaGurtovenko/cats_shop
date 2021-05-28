@@ -1,0 +1,18 @@
+mixin cat(img, likeImg, sale, saleText, title, color, age, col, price, active='', button)
+  .product
+    .img__container
+      img(alt="cat" src= img).product__img
+      div(class= sale)= saleText
+      img(alt="like" src= likeImg).product__like
+    .like
+    .product__info
+      .product__container
+        .product__title= title
+        .product__extra
+          .product__color= color
+          .product__age= age
+            span.product__age-text Возраст
+          .product__col= col
+            span.product__col-text Кол-во лап
+        .product__price= price
+      .product__button(class= active)= button
